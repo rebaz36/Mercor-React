@@ -10,7 +10,6 @@ const styles = {
     fontSize: '6vh',
     fontFamily: 'Helvetica',
     fontWeight: 'bold',
-    overflow: 'auto',
     padding: '200px 0 90vh 0',
     backgroundColor: '#000',
   },
@@ -103,7 +102,7 @@ const TextAnimation = () => {
   }, []);
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} id="TextAnimationContainer">
       <div
         style={calculateScroll(scrollPosition)}
       >
