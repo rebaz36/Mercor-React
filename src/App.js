@@ -1,11 +1,14 @@
 import './App.css';
+// eslint-disable-next-line import/extensions
+import Header from './Components/Header';
+import TextAnimation from './Components/TextAnimation';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        hello world
-      </header>
+      <Header />
+      <TextAnimation />
+
     </div>
   );
 }
