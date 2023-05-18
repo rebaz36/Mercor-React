@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import propTypes from 'prop-types';
 
 const styles = {
   container: {
@@ -10,7 +11,7 @@ const styles = {
     fontSize: '6vh',
     fontFamily: 'Helvetica',
     fontWeight: 'bold',
-    padding: '200px 0 90vh 0',
+    padding: '200px 0 110vh 0',
     backgroundColor: '#000',
   },
   textContainer: {
@@ -18,7 +19,7 @@ const styles = {
   },
 };
 
-const TextAnimation = () => {
+const TextAnimation = ({ setShow }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const calculateWordBackgroundColor = (index, scrollPosition) => {
@@ -28,6 +29,7 @@ const TextAnimation = () => {
 
   const calculateScroll = (scrollPosition) => {
     if (scrollPosition < 1170) {
+      setShow(false);
       return {
         border: 'none',
         padding: '0 2rem',
@@ -36,6 +38,7 @@ const TextAnimation = () => {
         position: 'fixed',
       };
     }
+    setShow(true);
     return {
       border: 'none',
       padding: '0 2rem',
@@ -126,3 +129,7 @@ const TextAnimation = () => {
 };
 
 export default TextAnimation;
+
+TextAnimation.propTypes = {
+  setShow: propTypes.func.isRequired,
+};
