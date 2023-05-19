@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Mercor-React/static/css/main.48942a01.css",
+    "main.js": "/Mercor-React/static/js/main.0dc60ff6.js",
+    "index.html": "/Mercor-React/index.html",
+    "main.48942a01.css.map": "/Mercor-React/static/css/main.48942a01.css.map",
+    "main.0dc60ff6.js.map": "/Mercor-React/static/js/main.0dc60ff6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48942a01.css",
+    "static/js/main.0dc60ff6.js"
+  ]
+}
