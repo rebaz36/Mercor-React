@@ -1,6 +1,9 @@
+/* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from 'react';
 import StarShape from '../Assets/StarShape';
 import MiniSlider from '../Components/MiniSlider';
+import RightAnimationContainer from '../Components/RightAnimationContainer';
+import './RightAnimations.css';
 
 const styles = {
   container: {
@@ -19,19 +22,13 @@ const styles = {
     padding: '0',
     margin: '0',
     boxSizing: 'border-box',
-    width: '50%',
     height: '60vh',
     display: 'flex',
     flexDirection: 'column',
   },
   right: {
-    padding: '0 4rem 0 0',
     margin: '0',
     boxSizing: 'border-box',
-    backgroundColor: '#101010',
-    borderRadius: '1.25rem',
-    width: '50%',
-    height: '60vh',
     display: 'flex',
     flexDirection: 'row',
   },
@@ -41,6 +38,21 @@ const styles = {
 const FancyScroll = ({ show }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeSlide, setActiveSlide] = useState('01');
+
+  const texts = {
+    '01': {
+      title: 'A keyboard first experience',
+      text: 'Powerful shortcuts and a keyboard-first workflow means you will get to your finish line in no time!',
+    },
+    '02': {
+      title: 'Bullets to visuals in a click.',
+      text: 'Transform any block to any other and try different options without any design hassle',
+    },
+    '03': {
+      title: 'A powerful assistant',
+      text: 'just a click away',
+    },
+  };
 
   // eslint-disable-next-line no-unused-vars
   const ContainerStyles = (scrollPosition) => {
@@ -112,8 +124,15 @@ const FancyScroll = ({ show }) => {
           {scrollPosition}
         </div>
         <div style={styles.right}>
-          right
-          {scrollPosition}
+          { activeSlide === '01' ? (
+            <RightAnimationContainer className="fadeOutFromAbove" Text={texts['01']} />
+          ) : (
+            activeSlide === '02' ? (
+              <RightAnimationContainer className="fadeOutFromAbove" Text={texts['02']} />
+            ) : (
+              <RightAnimationContainer className="fadeOutFromAbove" Text={texts['03']} />
+            )
+          )}
         </div>
         {/* eslint-disable-next-line max-len */}
         <MiniSlider scrollPosition={scrollPosition} activeSlide={activeSlide} setActiveSlide={setActiveSlide} />

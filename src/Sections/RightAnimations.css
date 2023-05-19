@@ -1,0 +1,23 @@
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    background-color: #fff;
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateY(-50%);
+    background-color: red;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+    background-color: blue;
+  }
+}
+
+.fadeOutFromAbove {
+  animation: fadeOut 6s linear 2s infinite alternate;
+}

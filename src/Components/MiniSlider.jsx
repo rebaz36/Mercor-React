@@ -18,8 +18,9 @@ function MiniSlider({ scrollPosition, activeSlide, setActiveSlide }) {
 
   return (
     <div style={{
+      marginLeft: '1.5rem',
       color: '#adadad',
-      width: '5vw',
+      width: '8px',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
